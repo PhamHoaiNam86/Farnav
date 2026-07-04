@@ -30,13 +30,17 @@ export default function ProductSection() {
 
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {PRODUCTS.map((product) => (
+          {PRODUCTS.map((product, idx) => (
              <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6 }}
+              transition={{ 
+                duration: 1.2, 
+                delay: idx * 0.25, 
+                ease: [0.16, 1, 0.3, 1] as any
+              }}
               onClick={() => openDetails(product)}
               className="group running-border-card flex flex-col items-start text-left pt-[15px] px-[15px] pb-[30px] rounded-[15px] transition-all duration-300 relative cursor-pointer floating-shadow"
             >

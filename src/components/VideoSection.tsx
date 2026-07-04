@@ -104,14 +104,22 @@ export default function VideoSection() {
             
             {/* Scrollable list */}
             <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible md:overflow-y-auto gap-4 pb-4 md:pb-0 md:pr-2 custom-scrollbar md:max-h-[660px]">
-              {VIDEOS.map((video) => {
+              {VIDEOS.map((video, idx) => {
                 const isActive = video.id === activeVideo.id;
                 return (
-                  <div
+                  <motion.div
                     key={video.id}
                     onClick={() => {
                       setActiveVideo(video);
                       setDurationSecs(parseDuration(video.duration));
+                    }}
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: idx * 0.12, 
+                      ease: [0.16, 1, 0.3, 1] as any 
                     }}
                     className={`group flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 cursor-pointer flex flex-col md:flex-row md:items-center gap-3 shadow-md transition-all running-border-card video-playlist-item ${
                       isActive ? 'active-card' : ''
@@ -144,14 +152,24 @@ export default function VideoSection() {
                         Thời lượng: {video.duration}
                       </span>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
           </div>
 
           {/* Right Column: Active Video Player (7 parts) */}
-          <div className="order-1 md:order-2 md:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ 
+              duration: 1.2, 
+              delay: 0.2, 
+              ease: [0.16, 1, 0.3, 1] as any 
+            }}
+            className="order-1 md:order-2 md:col-span-7"
+          >
             <div className="relative aspect-video rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 floating-shadow">
               <img
                 src={activeVideo.thumbnail}
@@ -180,7 +198,7 @@ export default function VideoSection() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

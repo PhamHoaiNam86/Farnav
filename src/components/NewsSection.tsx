@@ -44,10 +44,18 @@ export default function NewsSection() {
               Xem nhiều lần
             </h3>
             <div className="space-y-5">
-              {mostViewedArticles.map((article) => (
-                <div
+              {mostViewedArticles.map((article, idx) => (
+                <motion.div
                   key={article.id}
                   onClick={() => setActiveArticle(article)}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 1.0, 
+                    delay: idx * 0.15, 
+                    ease: [0.16, 1, 0.3, 1] as any 
+                  }}
                   className="flex gap-4 group cursor-pointer"
                 >
                   <div className="w-[140px] h-[130px] rounded-xl overflow-hidden flex-shrink-0 bg-gray-50 border border-gray-100 relative floating-shadow-zoom-105">
@@ -66,7 +74,7 @@ export default function NewsSection() {
                       {article.date}
                     </span>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -77,8 +85,15 @@ export default function NewsSection() {
               Tin mới
             </h3>
             {featuredArticle && (
-              <div
+              <motion.div
                 onClick={() => setActiveArticle(featuredArticle)}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 1.2, 
+                  ease: [0.16, 1, 0.3, 1] as any 
+                }}
                 className="group cursor-pointer flex flex-col gap-[25px] text-left mx-auto max-w-[700px] w-full"
               >
                 <div className="w-full aspect-[14/13] overflow-hidden rounded-xl bg-gray-100 relative floating-shadow-zoom-103">
@@ -100,7 +115,7 @@ export default function NewsSection() {
                     {featuredArticle.summary}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
 
@@ -109,10 +124,18 @@ export default function NewsSection() {
             <h3 className="font-display text-lg font-black text-transparent select-none uppercase tracking-wide hidden lg:block">
               Spacer
             </h3>
-            {rightArticles.map((article) => (
-              <div
+            {rightArticles.map((article, idx) => (
+              <motion.div
                 key={article.id}
                 onClick={() => setActiveArticle(article)}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 1.0, 
+                  delay: idx * 0.2, 
+                  ease: [0.16, 1, 0.3, 1] as any 
+                }}
                 className="group cursor-pointer flex flex-col gap-2 w-full"
               >
                 <div className="w-full aspect-[16/15] overflow-hidden rounded-xl bg-gray-50 border border-gray-100 relative floating-shadow-zoom-105">
@@ -135,7 +158,7 @@ export default function NewsSection() {
                     {article.readTime}
                   </span> */}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
