@@ -41,7 +41,7 @@ export default function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group flex flex-col gap-6 bg-white p-6 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
+              className="group running-border-card flex flex-col gap-6 p-6 rounded-[15px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
             >
               {/* News Thumbnail */}
               <div className="w-full aspect-[16/10] overflow-hidden rounded-xl bg-gray-100 relative">
@@ -75,7 +75,7 @@ export default function NewsSection() {
 
                   <button
                     onClick={() => setActiveArticle(article)}
-                    className="text-on-surface font-display text-xs tracking-wider font-bold flex items-center gap-1 group-hover:text-primary transition-colors cursor-pointer"
+                    className="text-primary font-display text-xs tracking-wider font-bold flex items-center gap-1 transition-all duration-300 border border-primary/20 px-4 py-2 rounded-lg hover:bg-primary hover:text-white hover:border-primary cursor-pointer"
                   >
                     ĐỌC THÊM
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

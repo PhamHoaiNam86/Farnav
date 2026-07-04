@@ -91,7 +91,7 @@ export default function RegistrationForm() {
           <div className="absolute -top-12 -left-12 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
 
-          <div className="bg-white border border-gray-150 rounded-2xl p-6 sm:p-10 shadow-xl relative z-10">
+          <div className="running-border-card p-6 sm:p-10 rounded-[15px] shadow-xl relative z-10">
             <AnimatePresence mode="wait">
               {!successData ? (
                 // Form entry state
@@ -124,7 +124,7 @@ export default function RegistrationForm() {
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="Nhập họ tên của bạn"
-                        className="w-full border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3.5 text-sm text-on-surface bg-gray-50 focus:bg-white transition-all outline-none"
+                        className="w-full border-2 border-primary/30 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3.5 text-sm text-on-surface bg-gray-50 focus:bg-white transition-all outline-none"
                       />
                     </div>
                     <div className="flex flex-col gap-2">
@@ -138,7 +138,7 @@ export default function RegistrationForm() {
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                         placeholder="Nhập số điện thoại"
-                        className="w-full border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3.5 text-sm text-on-surface bg-gray-50 focus:bg-white transition-all outline-none"
+                        className="w-full border-2 border-primary/30 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3.5 text-sm text-on-surface bg-gray-50 focus:bg-white transition-all outline-none"
                       />
                     </div>
                   </div>
@@ -155,7 +155,7 @@ export default function RegistrationForm() {
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="Mô tả nhu cầu của bạn (đo đất địa chính, khảo sát mỏ, xây dựng cao tốc...) để chúng tôi chuẩn bị dòng máy test phù hợp nhất."
                       rows={4}
-                      className="w-full border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3.5 text-sm text-on-surface bg-gray-50 focus:bg-white transition-all outline-none resize-none"
+                      className="w-full border-2 border-primary/30 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3.5 text-sm text-on-surface bg-gray-50 focus:bg-white transition-all outline-none resize-none"
                     />
                   </div>
 

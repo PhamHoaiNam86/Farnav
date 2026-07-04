@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, Globe, Menu, X, Download, ShoppingBag, Facebook } from 'lucide-react';
+import { Mail, Phone, Globe, Menu, X, Download } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -54,32 +54,57 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-outline-variant shadow-sm">
       {/* Top Bar */}
-      <div className="bg-white border-b border-on-surface py-2 px-6">
-        <div className="max-w-[1680px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+      <div className="bg-white border-b border-on-surface py-2">
+        <div className="max-w-[1920px] mx-auto px-6 md:px-[100px] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
           <p className="font-semibold tracking-widest text-on-surface uppercase text-center sm:text-left">
             FARNAV VIỆT NAM - GNSS 4.0 DẪN ĐƯỜNG TƯƠNG LAI
           </p>
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3 text-on-surface-variant">
               <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); handleActionClick('Shopee Store', 'shopee.vn/farnav_vietnam'); }}
-                className="hover:text-primary transition-colors flex items-center gap-1"
-                title="Shopee"
-              >
-                <ShoppingBag className="w-3.5 h-3.5" />
-                <span className="hidden lg:inline text-[10px] tracking-wider font-semibold">SHOPPING</span>
-              </a>
-              <span className="text-gray-300">|</span>
-              <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-primary transition-colors flex items-center gap-1"
+                className="hover:text-[#1877F2] transition-all duration-300 transform hover:scale-110 flex items-center"
                 title="Facebook"
               >
-                <Facebook className="w-3.5 h-3.5" />
-                <span className="hidden lg:inline text-[10px] tracking-wider font-semibold">FACEBOOK</span>
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <div className="h-3 w-[1px] bg-on-surface/20"></div>
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); handleActionClick('Shopee Store', 'shopee.vn/farnav_vietnam'); }}
+                className="hover:text-[#EE4D2D] transition-all duration-300 transform hover:scale-110 flex items-center"
+                title="Shopee"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 .002c-2.316.002-4.223 1.83-4.35 4.122l-.123 2.24H5.2c-.754 0-1.458.375-1.892 1.002-.435.626-.532 1.41-.26 2.115l2.457 6.442A5.205 5.205 0 0010.36 19.34l.035.006c.52.122 1.05.183 1.583.183.543 0 1.084-.062 1.614-.188a5.213 5.213 0 003.882-3.46l2.443-6.425c.272-.705.175-1.488-.26-2.114A2.327 2.327 0 0017.766 6.37l-2.326-.006-.123-2.24C15.19 1.83 13.284.002 10.968.002zM9.54 6.364l.1-1.782c.074-1.342 1.187-2.4 2.53-2.4 1.344 0 2.457 1.058 2.531 2.4l.099 1.782H9.54z"/>
+                </svg>
+              </a>
+              <div className="h-3 w-[1px] bg-on-surface/20"></div>
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); handleActionClick('TikTok Channel', 'tiktok.com/@farnav_vietnam'); }}
+                className="hover:text-black transition-all duration-300 transform hover:scale-110 flex items-center"
+                title="TikTok"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.92-1.88 2.45-5.23 3.32-8.02 2.07-2.23-1-3.66-3.21-3.72-5.65-.08-2.58 1.47-5.07 3.88-6.02 1.15-.44 2.4-.57 3.6-.35V11.2c-.88-.23-1.83-.17-2.67.23-1.22.6-1.97 1.87-1.96 3.24.02 1.54.98 2.94 2.43 3.44 1.53.53 3.34-.04 4.19-1.43.34-.57.48-1.24.47-1.9V.02z"/>
+                </svg>
+              </a>
+              <div className="h-3 w-[1px] bg-on-surface/20"></div>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#FF0000] transition-all duration-300 transform hover:scale-110 flex items-center"
+                title="YouTube"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
               </a>
             </div>
             <div className="h-3 w-[1px] bg-on-surface/20"></div>
@@ -100,7 +125,7 @@ export default function Header() {
       </div>
 
       {/* Main Nav Bar */}
-      <div className="px-6 py-4 max-w-[1680px] mx-auto flex justify-between items-center relative">
+      <div className="px-6 md:px-[100px] py-4 max-w-[1920px] mx-auto flex justify-between items-center relative">
         {/* Brand Logo */}
         <div 
           onClick={() => scrollToSection('trang-chu')}
@@ -111,12 +136,12 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`font-display text-xs tracking-wider font-bold transition-all relative py-1.5 ${
+              className={`font-display text-base lg:text-[18px] tracking-wider font-bold transition-all relative py-1.5 ${
                 activeSection === item.id ? 'text-primary' : 'text-on-surface-variant hover:text-primary'
               }`}
             >
