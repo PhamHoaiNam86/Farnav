@@ -80,7 +80,7 @@ export default function VideoSection() {
 
   return (
     <section id="video" className="py-20 bg-surface-container-low overflow-hidden">
-      <div className="max-w-[1680px] mx-auto px-6">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-[100px]">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="font-display text-xs tracking-[0.2em] font-extrabold text-primary uppercase">
@@ -91,81 +91,97 @@ export default function VideoSection() {
           </h2>
         </div>
 
-        {/* Master Active Video Showcase */}
-        <div className="relative aspect-video rounded-2xl overflow-hidden mb-8 group cursor-pointer shadow-xl border border-gray-200">
-          <img
-            src={activeVideo.thumbnail}
-            alt={activeVideo.title}
-            className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-1000"
-          />
-          <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-all">
-            <button
-              onClick={() => handleOpenPlayer(activeVideo)}
-              className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform active:scale-95 cursor-pointer"
-            >
-              <Play className="w-8 h-8 fill-white ml-1" />
-            </button>
-          </div>
-          <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="text-left">
-              <span className="bg-primary/20 backdrop-blur-md text-primary-fixed-dim text-[10px] font-extrabold tracking-widest px-2.5 py-1 rounded-md border border-primary/20 uppercase">
-                ĐANG CHỌN
+        {/* Grid Layout: Left 3 cols (Playlist) and Right 7 cols (Active Video) */}
+        <div className="grid grid-cols-1 md:grid-cols-10 gap-6 lg:gap-8 items-start">
+          
+          {/* Left Column: Playlist (3 parts) */}
+          <div className="order-2 md:order-1 md:col-span-3 flex flex-col">
+            <div className="text-left mb-3">
+              <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                Danh sách phát video hướng dẫn & sự kiện:
               </span>
-              <h3 className="text-white text-lg sm:text-2xl font-black tracking-tight mt-2">
-                {activeVideo.title}
-              </h3>
             </div>
-            <span className="text-xs font-mono font-bold bg-black/60 px-3 py-1 rounded-full text-gray-300 border border-white/10 self-start sm:self-auto">
-              Thời lượng: {activeVideo.duration}
-            </span>
-          </div>
-        </div>
-
-        {/* Thumbnail Selector Row */}
-        <div className="text-left mb-3">
-          <span className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
-            Danh sách phát Video hướng dẫn & sự kiện:
-          </span>
-        </div>
-        
-        {/* Horizontal scrolling strip */}
-        <div className="flex overflow-x-auto gap-6 pb-6 custom-scrollbar scroll-smooth">
-          {VIDEOS.map((video) => {
-            const isActive = video.id === activeVideo.id;
-            return (
-              <div
-                key={video.id}
-                onClick={() => {
-                  setActiveVideo(video);
-                  setDurationSecs(parseDuration(video.duration));
-                }}
-                className={`flex-shrink-0 w-72 p-3 rounded-xl transition-all border cursor-pointer ${
-                  isActive
-                    ? 'bg-white border-primary shadow-md'
-                    : 'bg-white/50 border-gray-100 hover:bg-white hover:shadow-sm'
-                }`}
-              >
-                <div className="relative aspect-video rounded-lg overflow-hidden mb-3">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-white/90 text-primary flex items-center justify-center shadow">
-                      <Play className="w-4 h-4 fill-primary ml-0.5" />
+            
+            {/* Scrollable list */}
+            <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible md:overflow-y-auto gap-4 pb-4 md:pb-0 md:pr-2 custom-scrollbar md:max-h-[660px]">
+              {VIDEOS.map((video) => {
+                const isActive = video.id === activeVideo.id;
+                return (
+                  <div
+                    key={video.id}
+                    onClick={() => {
+                      setActiveVideo(video);
+                      setDurationSecs(parseDuration(video.duration));
+                    }}
+                    className={`flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 rounded-xl transition-all border cursor-pointer flex flex-col md:flex-row md:items-center gap-3 ${
+                      isActive
+                        ? 'bg-white border-primary shadow-md'
+                        : 'bg-white/50 border-gray-100 hover:bg-white hover:shadow-sm'
+                    }`}
+                  >
+                    <div className="relative aspect-video rounded-lg overflow-hidden w-full md:w-28 flex-shrink-0">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-white/95 text-primary flex items-center justify-center shadow">
+                          <Play className="w-3.5 h-3.5 fill-primary ml-0.5" />
+                        </div>
+                      </div>
+                      <span className="absolute bottom-1.5 right-1.5 text-[9px] font-bold font-mono bg-black/70 px-1.5 py-0.2 rounded text-white">
+                        {video.duration}
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0 flex flex-col justify-between">
+                      <h4 className={`font-semibold text-xs sm:text-sm text-on-surface line-clamp-2 text-left leading-snug ${
+                        isActive ? 'text-primary font-bold' : ''
+                      }`}>
+                        {video.title}
+                      </h4>
+                      <span className="hidden md:inline-block text-[10px] text-on-surface-variant font-semibold mt-1">
+                        Thời lượng: {video.duration}
+                      </span>
                     </div>
                   </div>
-                  <span className="absolute bottom-2 right-2 text-[10px] font-bold font-mono bg-black/70 px-2 py-0.5 rounded text-white">
-                    {video.duration}
-                  </span>
-                </div>
-                <h4 className="font-semibold text-xs sm:text-sm text-on-surface line-clamp-2 text-left h-10 leading-snug">
-                  {video.title}
-                </h4>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right Column: Active Video Player (7 parts) */}
+          <div className="order-1 md:order-2 md:col-span-7">
+            <div className="relative aspect-video rounded-2xl overflow-hidden group cursor-pointer shadow-xl border border-gray-200">
+              <img
+                src={activeVideo.thumbnail}
+                alt={activeVideo.title}
+                className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-black/35 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                <button
+                  onClick={() => handleOpenPlayer(activeVideo)}
+                  className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform active:scale-95 cursor-pointer"
+                >
+                  <Play className="w-8 h-8 fill-white ml-1" />
+                </button>
               </div>
-            );
-          })}
+              <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div className="text-left">
+                  <span className="bg-primary/20 backdrop-blur-md text-primary-fixed-dim text-[10px] font-extrabold tracking-widest px-2.5 py-1 rounded-md border border-primary/20 uppercase">
+                    ĐANG CHỌN
+                  </span>
+                  <h3 className="text-white text-lg sm:text-2xl font-black tracking-tight mt-2">
+                    {activeVideo.title}
+                  </h3>
+                </div>
+                <span className="text-xs font-mono font-bold bg-black/60 px-3 py-1 rounded-full text-gray-300 border border-white/10 self-start sm:self-auto">
+                  Thời lượng: {activeVideo.duration}
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 

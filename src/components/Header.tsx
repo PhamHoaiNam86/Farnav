@@ -156,9 +156,19 @@ export default function Header() {
               {activeSection === item.id && (
                 <motion.div
                   layoutId="activeNavLine"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"
+                  className="absolute -bottom-1.5 left-[-4px] right-[-4px] h-2 text-primary"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
+                >
+                  <svg className="w-full h-full overflow-visible" viewBox="0 0 100 12" preserveAspectRatio="none">
+                    <path
+                      d="M2,6 C25,0 75,12 98,6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.div>
               )}
             </button>
           ))}
