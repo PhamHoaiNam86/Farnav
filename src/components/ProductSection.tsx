@@ -38,7 +38,7 @@ export default function ProductSection() {
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6 }}
               onClick={() => openDetails(product)}
-              className="group running-border-card flex flex-col items-start text-left pt-[15px] px-[15px] pb-[30px] rounded-[15px] shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative cursor-pointer"
+              className="group running-border-card flex flex-col items-start text-left pt-[15px] px-[15px] pb-[30px] rounded-[15px] transition-all duration-300 relative cursor-pointer floating-shadow"
             >
               {/* Product category tag */}
               <span className="absolute top-4 left-4 bg-primary/5 text-primary text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full border border-primary/10 z-10">

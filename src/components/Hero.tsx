@@ -112,7 +112,7 @@ export default function Hero({ onPlayVideo, onExploreProducts }: HeroProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-5 relative floating-shadow rounded-2xl"
           >
             {/* Visual highlight box */}
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-primary/30 to-transparent blur-xl opacity-30"></div>

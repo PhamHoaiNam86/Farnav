@@ -248,3 +248,14 @@
   animation-delay: 0.6s;
 }
 
+/* Floating "suspended in mid-air" shadow style */
+.floating-shadow {
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.2), 0 5px 20px -5px rgba(0, 95, 110, 0.15) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.floating-shadow:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.28), 0 10px 30px -10px rgba(0, 95, 110, 0.25) !important;
+}
+

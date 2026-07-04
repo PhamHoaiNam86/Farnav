@@ -54,7 +54,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="flex items-center justify-center gap-5 p-6 rounded-2xl bg-primary border border-primary/20 shadow-sm hover:bg-white hover:border-gray-250 hover:scale-105 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                className="flex items-center justify-center gap-5 p-6 rounded-2xl bg-primary border border-primary/20 hover:bg-white hover:border-gray-250 hover:scale-105 transition-all duration-300 group cursor-pointer floating-shadow"
               >
                 <div className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 bg-white/15 text-white group-hover:bg-primary/10 group-hover:text-primary group-hover:scale-110">
                   <IconComponent className="w-7 h-7 stroke-[2]" />
