@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 
@@ -25,9 +25,18 @@ export default function Hero({ onPlayVideo, onExploreProducts }: HeroProps) {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  useEffect(() => {
+  const animFrameId = useRef<number | null>(null);
+
+  const triggerCountAnimation = () => {
+    if (animFrameId.current) {
+      cancelAnimationFrame(animFrameId.current);
+    }
+
+    setChannelsCount(0);
+    setBatteryCount(0);
+
     let startTimestamp: number | null = null;
-    const duration = 2000; // 2 seconds
+    const duration = 1500; // Snappy 1.5 seconds
 
     const step = (timestamp: number) => {
       if (startTimestamp === null) startTimestamp = timestamp;
@@ -38,11 +47,21 @@ export default function Hero({ onPlayVideo, onExploreProducts }: HeroProps) {
       setBatteryCount(Math.floor(easeProgress * 20));
 
       if (progress < 1) {
-        window.requestAnimationFrame(step);
+        animFrameId.current = window.requestAnimationFrame(step);
+      } else {
+        animFrameId.current = null;
       }
     };
 
-    window.requestAnimationFrame(step);
+    animFrameId.current = window.requestAnimationFrame(step);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (animFrameId.current) {
+        cancelAnimationFrame(animFrameId.current);
+      }
+    };
   }, []);
 
   // Animation variants for staggered entrance
@@ -80,7 +99,8 @@ export default function Hero({ onPlayVideo, onExploreProducts }: HeroProps) {
           <motion.div 
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false }}
             className="lg:col-span-7 flex flex-col items-start text-left"
           >
             <motion.span 
@@ -128,6 +148,8 @@ export default function Hero({ onPlayVideo, onExploreProducts }: HeroProps) {
             {/* Micro Specs Banner */}
             <motion.div 
               variants={itemVariants}
+              viewport={{ once: false }}
+              onViewportEnter={triggerCountAnimation}
               className="grid grid-cols-3 gap-6 pt-10 border-t border-gray-100 mt-10 w-full max-w-xl"
             >
               <div>
@@ -148,7 +170,8 @@ export default function Hero({ onPlayVideo, onExploreProducts }: HeroProps) {
           {/* Hero Right Visuals */}
           <motion.div 
             initial={{ opacity: 0, x: 70 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 2.0, delay: 0.45, ease: [0.16, 1, 0.3, 1] as any }}
             className="lg:col-span-5 relative floating-shadow rounded-2xl"
           >

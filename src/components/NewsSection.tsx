@@ -50,7 +50,7 @@ export default function NewsSection() {
                   onClick={() => setActiveArticle(article)}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ 
                     duration: 1.0, 
                     delay: idx * 0.15, 
@@ -89,7 +89,7 @@ export default function NewsSection() {
                 onClick={() => setActiveArticle(featuredArticle)}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ 
                   duration: 1.2, 
                   ease: [0.16, 1, 0.3, 1] as any 
@@ -130,7 +130,7 @@ export default function NewsSection() {
                 onClick={() => setActiveArticle(article)}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ 
                   duration: 1.0, 
                   delay: idx * 0.2, 

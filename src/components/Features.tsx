@@ -52,7 +52,7 @@ export default function Features() {
                 key={index}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="flex items-center justify-center gap-5 p-6 rounded-2xl bg-primary border border-primary/20 hover:bg-white hover:border-gray-250 hover:scale-105 transition-all duration-300 group cursor-pointer floating-shadow"
               >

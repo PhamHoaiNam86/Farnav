@@ -35,7 +35,7 @@ export default function ProductSection() {
               key={product.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
+              viewport={{ once: false }}
               transition={{ 
                 duration: 1.2, 
                 delay: idx * 0.25, 
