@@ -113,7 +113,7 @@ export default function VideoSection() {
                       setActiveVideo(video);
                       setDurationSecs(parseDuration(video.duration));
                     }}
-                    className={`group flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 cursor-pointer flex flex-col md:flex-row md:items-center gap-3 shadow-md transition-all running-border-card ${
+                    className={`group flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 cursor-pointer flex flex-col md:flex-row md:items-center gap-3 shadow-md transition-all running-border-card video-playlist-item ${
                       isActive ? 'active-card' : ''
                     }`}
                   >

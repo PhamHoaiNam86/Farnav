@@ -133,16 +133,16 @@
   transition: background 0.3s ease;
 }
 
-/* Inactive running-border-card hover states */
-.running-border-card:not(.active-card):hover {
+/* Inactive running-border-card hover states for video playlist items only */
+.video-playlist-item.running-border-card:not(.active-card):hover {
   background: rgba(0, 95, 110, 0.15);
 }
 
-.running-border-card:not(.active-card):hover::before {
+.video-playlist-item.running-border-card:not(.active-card):hover::before {
   opacity: 0;
 }
 
-.running-border-card:not(.active-card):hover::after {
+.video-playlist-item.running-border-card:not(.active-card):hover::after {
   background: rgba(0, 95, 110, 0.05);
 }
 
