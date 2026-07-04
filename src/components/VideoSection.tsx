@@ -113,7 +113,7 @@ export default function VideoSection() {
                       setActiveVideo(video);
                       setDurationSecs(parseDuration(video.duration));
                     }}
-                    className={`flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 cursor-pointer flex flex-col md:flex-row md:items-center gap-3 running-border-card shadow-md transition-all ${
+                    className={`group flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 cursor-pointer flex flex-col md:flex-row md:items-center gap-3 shadow-md transition-all running-border-card ${
                       isActive ? 'active-card' : ''
                     }`}
                   >
@@ -133,13 +133,13 @@ export default function VideoSection() {
                       </span>
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-between z-10">
-                      <h4 className={`font-semibold text-xs sm:text-sm line-clamp-2 text-left leading-snug ${
-                        isActive ? 'text-white font-bold' : 'text-on-surface'
+                      <h4 className={`font-semibold text-xs sm:text-sm line-clamp-2 text-left leading-snug transition-colors duration-300 ${
+                        isActive ? 'text-white font-bold' : 'text-on-surface group-hover:text-primary'
                       }`}>
                         {video.title}
                       </h4>
-                      <span className={`hidden md:inline-block text-[10px] font-semibold mt-1 ${
-                        isActive ? 'text-white/85' : 'text-on-surface-variant'
+                      <span className={`hidden md:inline-block text-[10px] font-semibold mt-1 transition-colors duration-300 ${
+                        isActive ? 'text-white/85' : 'text-on-surface-variant group-hover:text-primary/80'
                       }`}>
                         Thời lượng: {video.duration}
                       </span>

@@ -114,6 +114,7 @@
   animation: border-rotate 4s linear infinite;
   z-index: -2;
   pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .running-border-card::after {
@@ -128,6 +129,15 @@
   z-index: -1;
   pointer-events: none;
   transition: background 0.3s ease;
+}
+
+/* Inactive running-border-card hover states */
+.running-border-card:not(.active-card):hover {
+  background: rgba(0, 95, 110, 0.15);
+}
+
+.running-border-card:not(.active-card):hover::before {
+  opacity: 0;
 }
 
 .running-border-card:not(.active-card):hover::after {
