@@ -15,6 +15,13 @@ export default function SolutionsSection() {
     nongnghiep: Sprout,
   };
 
+  const imageMap: Record<string, string> = {
+    diachinh: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCvv3t2RsrzeE79l93vfj4KNj07AuT_eXY3ZV--LtRptNvgzw_ReLHFeTiM45WC93dBSv_PYu-kKaZbtPqJPqrcrkPlBzXn6PYXLStIn4HTc5FNk_aBmjqp3zt9ynddOknXkj7CbPvGAqHHNpnpe7tU-jSq7AXTL9BHYwLhWqhKDinvodyK523uELs1fuy-JYoJeX2viJ4nR-jTQ_RV1H4xMky2JeqhOvmITOw20YZP7MjY_N-W4eJT1TfQqbpVzl36FoS8ZWzVyuC9',
+    khaosat: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4PQoZ4Ku4ooLiPJvBDyvOgYdTlmtxyN5AhgpEmLLjYpBqDtrYThJ2vthERG5iCy7Cyb3jyMp8-Oer4ZaFJ5cG1jYTvkRINyNWhvYayl3wtnNLGv0TQVtgfYIwdUQpMu7C3ACuim8A23SrjurmexjPhq4EYUxnM89UKLBolBelPagA4tNYi0zDPD4G18Sy8wyCgAt36SKY29ZzwIKHyC5xKwNZrLZ358d7rlF_I3L9s0e3djnp7f46Z7ak-qfJvSZGbrOJD3pEz4ZP',
+    xaydung: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz8tryIncyIE45ByEXOyoKsQuRxTr9RSElT8A1qxFCTO7nzXE6HBsPVjYHYX3tS0qB5OvHN4bKPc850UXOp_gGpV6WKeMQz-b5o2KnGK_LpEeYvVAdH9brRdDN5NUoIGutF0OICUMtCkOl7tCLW48oMShDXBQv7wkSZxKC9YfeeoBi6ouoaJkJ-3CSG_I4MpG3lo8lYFydxyW7fCxOf1j_fwXBg8NjsRmY3bk4n_Vn8YFT31ZdtlcRb8soZWsz9lZUs3m_TiHj7gNi',
+    nongnghiep: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBR3GEGu8yGOKhtxqGbQA3a9T-ZyBgs8QV0bDfcZbvbzJdEeYFrJ5ELlv8o-jtCd7mmp7rbjFHyGoXGIZmWB_A3DJ-nQL7v0kvCzkyCNIntYPBGHk89A3D9VjqBZx6FvsjaMod8z_XLZPg2qAbfJct-RooW9blkzvrDMFBNzzqGyTdKsuxylVIRBPe7Lzph05C8bHbGfyDDsuXJB3nZO-u2gYFLlkg2MO6pCJmPv6BtBy89s-T52f0qMp9XvxUTJKa4s08g4KbHZEJZ4Q',
+  };
+
   return (
     <section id="giai-phap" className="py-20 bg-on-surface text-white relative overflow-hidden">
       {/* Decorative radial lighting in background */}
@@ -134,14 +141,21 @@ export default function SolutionsSection() {
           {/* Right Column: Visual Mockup Showcase with Interactive Hotspots */}
           <div className="lg:col-span-5 relative group">
             <div className="absolute -inset-1 rounded-2xl bg-primary/20 blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4PQoZ4Ku4ooLiPJvBDyvOgYdTlmtxyN5AhgpEmLLjYpBqDtrYThJ2vthERG5iCy7Cyb3jyMp8-Oer4ZaFJ5cG1jYTvkRINyNWhvYayl3wtnNLGv0TQVtgfYIwdUQpMu7C3ACuim8A23SrjurmexjPhq4EYUxnM89UKLBolBelPagA4tNYi0zDPD4G18Sy8wyCgAt36SKY29ZzwIKHyC5xKwNZrLZ358d7rlF_I3L9s0e3djnp7f46Z7ak-qfJvSZGbrOJD3pEz4ZP"
-                alt="Application Sunset Engineer"
-                className="w-full object-cover aspect-[4/3] sm:aspect-square"
-              />
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] sm:aspect-square">
+              <AnimatePresence mode="popLayout">
+                <motion.img
+                  key={activeSolutionId}
+                  src={imageMap[activeSolutionId] || imageMap.diachinh}
+                  alt={activeSolution.title}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
               {/* HUD / Science Tech Overlay graphics */}
-              <div className="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-60"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-60 pointer-events-none"></div>
 
               {/* Decorative HUD Target reticle */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-primary/20 rounded-full flex items-center justify-center animate-[spin_40s_linear_infinite] pointer-events-none">
@@ -153,7 +167,7 @@ export default function SolutionsSection() {
               </div>
 
               {/* Active data stats display badge */}
-              <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-2 rounded-lg border border-white/10 text-[10px] font-mono text-primary-fixed-dim space-y-1">
+              <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-2 rounded-lg border border-white/10 text-[10px] font-mono text-primary-fixed-dim space-y-1 z-10 pointer-events-none">
                 <p>SYS_STATUS: READY</p>
                 <p>SIGNAL: FIXED (100%)</p>
                 <p>SATS: 38 VỆ TINH</p>

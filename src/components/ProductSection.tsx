@@ -37,7 +37,8 @@ export default function ProductSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6 }}
-              className="group running-border-card flex flex-col items-center text-center p-[15px] rounded-[15px] shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative"
+              onClick={() => openDetails(product)}
+              className="group running-border-card flex flex-col items-start text-left pt-[15px] px-[15px] pb-[30px] rounded-[15px] shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative cursor-pointer"
             >
               {/* Product category tag */}
               <span className="absolute top-4 left-4 bg-primary/5 text-primary text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full border border-primary/10 z-10">
@@ -55,24 +56,23 @@ export default function ProductSection() {
               </div>
 
               {/* Product Metadata */}
-              <h3 className="font-display text-2xl font-extrabold text-on-surface mb-1">
-                {product.name}
-              </h3>
-              <span className="font-display text-[10px] tracking-widest font-extrabold text-primary mb-4 uppercase block">
-                {product.tagline}
-              </span>
-              <p className="text-sm text-on-surface-variant max-w-xs leading-relaxed line-clamp-3">
-                {product.description}
-              </p>
+              <div className="w-full transition-transform duration-300 group-hover:-translate-y-5">
+                <h3 className="font-display text-2xl font-extrabold text-on-surface mb-1 text-center">
+                  {product.name}
+                </h3>
+                <span className="font-display text-[10px] tracking-widest font-extrabold text-primary mb-4 uppercase block text-center">
+                  {product.tagline}
+                </span>
+                <p className="text-sm text-on-surface-variant w-full leading-relaxed line-clamp-3">
+                  {product.description}
+                </p>
+              </div>
 
-              {/* Action Button */}
-              <button
-                onClick={() => openDetails(product)}
-                className="mt-6 text-primary font-display text-xs tracking-wider font-extrabold flex items-center gap-1 transition-all duration-300 border border-primary/30 px-5 py-2.5 rounded-lg hover:bg-primary hover:text-white hover:border-primary shadow-sm hover:shadow"
-              >
-                CHI TIẾT
+              {/* Hover View Details Block */}
+              <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-primary hover:bg-primary-container text-white flex items-center justify-center gap-1.5 font-display text-sm font-extrabold rounded-b-[15px] translate-y-[50px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out z-10">
+                XEM CHI TIẾT
                 <ChevronRight className="w-4 h-4" />
-              </button>
+              </div>
             </motion.div>
           ))}
         </div>

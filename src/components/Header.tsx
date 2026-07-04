@@ -12,7 +12,7 @@ export default function Header() {
     { id: 'san-pham', label: 'SẢN PHẨM' },
     { id: 'giai-phap', label: 'GIẢI PHÁP' },
     { id: 'tin-tuc', label: 'TIN TỨC' },
-    { id: 'video', label: 'DỊCH VỤ / VIDEO' },
+    { id: 'video', label: 'DỊCH VỤ' },
     { id: 'dang-ky', label: 'ĐĂNG KÝ TEST MÁY' },
   ];
 
@@ -64,15 +64,15 @@ export default function Header() {
             <span>FARNAV VIỆT NAM - GNSS 4.0 DẪN ĐƯỜNG TƯƠNG LAI</span>
           </p>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-3 text-white/80">
+            <div className="flex items-center gap-2.5">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center"
+                className="w-7 h-7 rounded-full bg-white/5 hover:bg-[#1877F2] text-white/80 hover:text-white flex items-center justify-center border border-white/10 transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5"
                 title="Facebook"
               >
-                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
@@ -80,10 +80,10 @@ export default function Header() {
               <a
                 href="#"
                 onClick={(e) => { e.preventDefault(); handleActionClick('Shopee Store', 'shopee.vn/farnav_vietnam'); }}
-                className="hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center"
+                className="w-7 h-7 rounded-full bg-white/5 hover:bg-[#EE4D2D] text-white/80 hover:text-white flex items-center justify-center border border-white/10 transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5"
                 title="Shopee"
               >
-                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 .002c-2.316.002-4.223 1.83-4.35 4.122l-.123 2.24H5.2c-.754 0-1.458.375-1.892 1.002-.435.626-.532 1.41-.26 2.115l2.457 6.442A5.205 5.205 0 0010.36 19.34l.035.006c.52.122 1.05.183 1.583.183.543 0 1.084-.062 1.614-.188a5.213 5.213 0 003.882-3.46l2.443-6.425c.272-.705.175-1.488-.26-2.114A2.327 2.327 0 0017.766 6.37l-2.326-.006-.123-2.24C15.19 1.83 13.284.002 10.968.002zM9.54 6.364l.1-1.782c.074-1.342 1.187-2.4 2.53-2.4 1.344 0 2.457 1.058 2.531 2.4l.099 1.782H9.54z"/>
                 </svg>
               </a>
@@ -91,10 +91,10 @@ export default function Header() {
               <a
                 href="#"
                 onClick={(e) => { e.preventDefault(); handleActionClick('TikTok Channel', 'tiktok.com/@farnav_vietnam'); }}
-                className="hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center"
+                className="w-7 h-7 rounded-full bg-white/5 hover:bg-black text-white/80 hover:text-white flex items-center justify-center border border-white/10 transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5"
                 title="TikTok"
               >
-                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.92-1.88 2.45-5.23 3.32-8.02 2.07-2.23-1-3.66-3.21-3.72-5.65-.08-2.58 1.47-5.07 3.88-6.02 1.15-.44 2.4-.57 3.6-.35V11.2c-.88-.23-1.83-.17-2.67.23-1.22.6-1.97 1.87-1.96 3.24.02 1.54.98 2.94 2.43 3.44 1.53.53 3.34-.04 4.19-1.43.34-.57.48-1.24.47-1.9V.02z"/>
                 </svg>
               </a>
@@ -103,10 +103,10 @@ export default function Header() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center"
+                className="w-7 h-7 rounded-full bg-white/5 hover:bg-[#FF0000] text-white/80 hover:text-white flex items-center justify-center border border-white/10 transition-all duration-300 shadow-sm hover:shadow hover:-translate-y-0.5"
                 title="YouTube"
               >
-                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
               </a>
