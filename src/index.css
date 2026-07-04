@@ -127,5 +127,23 @@
   border-radius: 13px;
   z-index: -1;
   pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.running-border-card:not(.active-card):hover::after {
+  background: rgba(0, 95, 110, 0.05);
+}
+
+.running-border-card.active-card::before {
+  background: conic-gradient(
+    from 0deg,
+    var(--color-primary-fixed),
+    transparent 180deg,
+    var(--color-primary-fixed)
+  );
+}
+
+.running-border-card.active-card::after {
+  background: var(--color-primary);
 }
 

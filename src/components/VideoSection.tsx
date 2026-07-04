@@ -113,13 +113,11 @@ export default function VideoSection() {
                       setActiveVideo(video);
                       setDurationSecs(parseDuration(video.duration));
                     }}
-                    className={`flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 rounded-xl transition-all border cursor-pointer flex flex-col md:flex-row md:items-center gap-3 ${
-                      isActive
-                        ? 'bg-white border-primary shadow-md'
-                        : 'bg-white/50 border-gray-100 hover:bg-white hover:shadow-sm'
+                    className={`flex-shrink-0 w-72 md:w-full p-3 md:p-2.5 cursor-pointer flex flex-col md:flex-row md:items-center gap-3 running-border-card shadow-md transition-all ${
+                      isActive ? 'active-card' : ''
                     }`}
                   >
-                    <div className="relative aspect-video rounded-lg overflow-hidden w-full md:w-28 flex-shrink-0">
+                    <div className="relative aspect-video rounded-lg overflow-hidden w-full md:w-28 flex-shrink-0 z-10">
                       <img
                         src={video.thumbnail}
                         alt={video.title}
@@ -134,13 +132,15 @@ export default function VideoSection() {
                         {video.duration}
                       </span>
                     </div>
-                    <div className="flex-1 min-w-0 flex flex-col justify-between">
-                      <h4 className={`font-semibold text-xs sm:text-sm text-on-surface line-clamp-2 text-left leading-snug ${
-                        isActive ? 'text-primary font-bold' : ''
+                    <div className="flex-1 min-w-0 flex flex-col justify-between z-10">
+                      <h4 className={`font-semibold text-xs sm:text-sm line-clamp-2 text-left leading-snug ${
+                        isActive ? 'text-white font-bold' : 'text-on-surface'
                       }`}>
                         {video.title}
                       </h4>
-                      <span className="hidden md:inline-block text-[10px] text-on-surface-variant font-semibold mt-1">
+                      <span className={`hidden md:inline-block text-[10px] font-semibold mt-1 ${
+                        isActive ? 'text-white/85' : 'text-on-surface-variant'
+                      }`}>
                         Thời lượng: {video.duration}
                       </span>
                     </div>
