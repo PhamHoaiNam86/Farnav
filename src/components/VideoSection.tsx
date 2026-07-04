@@ -152,7 +152,7 @@ export default function VideoSection() {
 
           {/* Right Column: Active Video Player (7 parts) */}
           <div className="order-1 md:order-2 md:col-span-7">
-            <div className="relative aspect-video rounded-2xl overflow-hidden group cursor-pointer shadow-xl border border-gray-200">
+            <div className="relative aspect-video rounded-2xl overflow-hidden group cursor-pointer border border-gray-200 floating-shadow">
               <img
                 src={activeVideo.thumbnail}
                 alt={activeVideo.title}

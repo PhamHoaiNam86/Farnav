@@ -91,7 +91,7 @@ export default function RegistrationForm() {
           <div className="absolute -top-12 -left-12 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
 
-          <div className="running-border-card p-6 sm:p-10 rounded-[15px] shadow-xl relative z-10">
+          <div className="running-border-card p-6 sm:p-10 rounded-[15px] relative z-10 floating-shadow">
             <AnimatePresence mode="wait">
               {!successData ? (
                 // Form entry state

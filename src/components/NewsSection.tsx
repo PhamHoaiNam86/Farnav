@@ -50,7 +50,7 @@ export default function NewsSection() {
                   onClick={() => setActiveArticle(article)}
                   className="flex gap-4 group cursor-pointer"
                 >
-                  <div className="w-[140px] h-[130px] rounded-xl overflow-hidden flex-shrink-0 bg-gray-50 border border-gray-100 relative transition-all duration-300 floating-shadow">
+                  <div className="w-[140px] h-[130px] rounded-xl overflow-hidden flex-shrink-0 bg-gray-50 border border-gray-100 relative floating-shadow-zoom-105">
                     <img
                       src={article.image}
                       alt={article.title}
@@ -81,7 +81,7 @@ export default function NewsSection() {
                 onClick={() => setActiveArticle(featuredArticle)}
                 className="group cursor-pointer flex flex-col gap-[25px] text-left mx-auto max-w-[700px] w-full"
               >
-                <div className="w-full aspect-[14/13] overflow-hidden rounded-xl bg-gray-100 relative transition-all duration-300 floating-shadow">
+                <div className="w-full aspect-[14/13] overflow-hidden rounded-xl bg-gray-100 relative floating-shadow-zoom-103">
                   <img
                     src={featuredArticle.image}
                     alt={featuredArticle.title}
@@ -115,7 +115,7 @@ export default function NewsSection() {
                 onClick={() => setActiveArticle(article)}
                 className="group cursor-pointer flex flex-col gap-2 w-full"
               >
-                <div className="w-full aspect-[16/15] overflow-hidden rounded-xl bg-gray-50 border border-gray-100 relative transition-all duration-300 floating-shadow">
+                <div className="w-full aspect-[16/15] overflow-hidden rounded-xl bg-gray-50 border border-gray-100 relative floating-shadow-zoom-105">
                   <img
                     src={article.image}
                     alt={article.title}

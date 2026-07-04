@@ -250,12 +250,51 @@
 
 /* Floating "suspended in mid-air" shadow style */
 .floating-shadow {
-  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.2), 0 5px 20px -5px rgba(0, 95, 110, 0.15) !important;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 
+    0 20px 50px -5px rgba(0, 0, 0, 0.35), 
+    0 10px 30px -5px rgba(0, 95, 110, 0.25) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .floating-shadow:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.28), 0 10px 30px -10px rgba(0, 95, 110, 0.25) !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 
+    0 40px 80px -10px rgba(0, 0, 0, 0.45), 
+    0 15px 40px -10px rgba(0, 95, 110, 0.35) !important;
+}
+
+/* Floating shadow with zoom/scale 1.05 instead of vertical translate on hover */
+.floating-shadow-zoom-105 {
+  box-shadow: 
+    0 20px 50px -5px rgba(0, 0, 0, 0.35), 
+    0 10px 30px -5px rgba(0, 95, 110, 0.25) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.floating-shadow-zoom-105:hover,
+.group:hover .floating-shadow-zoom-105 {
+  transform: scale(1.05) !important;
+  box-shadow: 
+    0 40px 80px -10px rgba(0, 0, 0, 0.45), 
+    0 15px 40px -10px rgba(0, 95, 110, 0.35) !important;
+}
+
+/* Floating shadow with zoom/scale 1.03 instead of vertical translate on hover */
+.floating-shadow-zoom-103 {
+  box-shadow: 
+    0 20px 50px -5px rgba(0, 0, 0, 0.35), 
+    0 10px 30px -5px rgba(0, 95, 110, 0.25) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.floating-shadow-zoom-103:hover,
+.group:hover .floating-shadow-zoom-103 {
+  transform: scale(1.03) !important;
+  box-shadow: 
+    0 40px 80px -10px rgba(0, 0, 0, 0.45), 
+    0 15px 40px -10px rgba(0, 95, 110, 0.35) !important;
 }
 
