@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, ChangeEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, Pause, RotateCcw, Volume2, Maximize, X, SkipForward, Info } from 'lucide-react';
+import { Play, Pause, RotateCcw, Volume2, X, SkipForward, Info } from 'lucide-react';
 import { VIDEOS } from '../data';
 import { VideoClip } from '../types';
 
@@ -80,13 +80,13 @@ export default function VideoSection() {
 
   return (
     <section id="video" className="py-20 bg-surface-container-low overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1680px] mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="font-display text-xs tracking-[0.2em] font-extrabold text-primary uppercase">
             VIDEO GALLERY
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-on-surface mt-2 tracking-tight">
+          <h2 className="font-display text-3xl sm:text-4xl font-black text-shimmer mt-2 tracking-tight">
             VIDEO NỔI BẬT
           </h2>
         </div>

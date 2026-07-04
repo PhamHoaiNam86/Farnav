@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Locate, Mountain, Construction, Sprout, Check, ChevronRight, Award } from 'lucide-react';
+import { Locate, Mountain, Construction, Sprout, Check, Award } from 'lucide-react';
 import { SOLUTIONS } from '../data';
 
 export default function SolutionsSection() {
@@ -20,7 +20,7 @@ export default function SolutionsSection() {
       {/* Decorative radial lighting in background */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-[1680px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Solution Selector and Details */}
           <div className="lg:col-span-7 space-y-8">
@@ -28,7 +28,7 @@ export default function SolutionsSection() {
               <span className="font-display text-xs tracking-[0.2em] font-extrabold text-primary-fixed uppercase">
                 INDUSTRY SOLUTIONS
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl font-black text-white mt-2">
+              <h2 className="font-display text-3xl sm:text-4xl font-black text-shimmer mt-2">
                 GIẢI PHÁP ỨNG DỤNG
               </h2>
               <p className="text-sm sm:text-base text-gray-300 mt-4 leading-relaxed max-w-xl">

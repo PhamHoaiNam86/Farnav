@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, X, Cpu, Battery, Shield, Scale, Eye, FileText, CheckCircle } from 'lucide-react';
+import { ChevronRight, X, Cpu, Battery, Shield, Scale, FileText, CheckCircle } from 'lucide-react';
 import { PRODUCTS } from '../data';
 import { Product } from '../types';
 
@@ -16,13 +16,13 @@ export default function ProductSection() {
 
   return (
     <section id="san-pham" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1680px] mx-auto px-6">
         {/* Section Heading */}
         <div className="text-center mb-16">
           <span className="font-display text-xs tracking-[0.2em] font-extrabold text-primary uppercase">
             PREMIUM HARDWARE
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-on-surface mt-2 tracking-tight">
+          <h2 className="font-display text-3xl sm:text-4xl font-black text-shimmer mt-2 tracking-tight">
             SẢN PHẨM NỔI BẬT
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
@@ -31,31 +31,31 @@ export default function ProductSection() {
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {PRODUCTS.map((product) => (
-            <motion.div
+             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6 }}
-              className="group flex flex-col items-center text-center p-8 rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+              className="group running-border-card flex flex-col items-center text-center p-[15px] rounded-[15px] shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative"
             >
               {/* Product category tag */}
-              <span className="absolute top-4 left-4 bg-primary/5 text-primary text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full border border-primary/10">
+              <span className="absolute top-4 left-4 bg-primary/5 text-primary text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full border border-primary/10 z-10">
                 {product.category}
               </span>
 
               {/* Product Image */}
-              <div className="mb-6 mt-4 w-56 h-56 flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-primary/5 rounded-full filter blur-xl scale-75 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="w-full aspect-square bg-gray-50 rounded-[15px] overflow-hidden mb-6 relative flex items-center justify-center border border-gray-100">
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Product Metadata */}
-              <h3 className="font-display text-xl font-extrabold text-on-surface mb-1">
+              <h3 className="font-display text-2xl font-extrabold text-on-surface mb-1">
                 {product.name}
               </h3>
               <span className="font-display text-[10px] tracking-widest font-extrabold text-primary mb-4 uppercase block">
@@ -68,7 +68,7 @@ export default function ProductSection() {
               {/* Action Button */}
               <button
                 onClick={() => openDetails(product)}
-                className="mt-6 text-primary font-display text-xs tracking-wider font-bold hover:text-primary-container flex items-center gap-1 transition-colors border border-primary/20 px-4 py-2 rounded-lg hover:bg-primary/5"
+                className="mt-6 text-primary font-display text-xs tracking-wider font-extrabold flex items-center gap-1 transition-all duration-300 border border-primary/30 px-5 py-2.5 rounded-lg hover:bg-primary hover:text-white hover:border-primary shadow-sm hover:shadow"
               >
                 CHI TIẾT
                 <ChevronRight className="w-4 h-4" />

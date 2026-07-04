@@ -55,7 +55,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-outline-variant shadow-sm">
       {/* Top Bar */}
       <div className="bg-white border-b border-on-surface py-2 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+        <div className="max-w-[1680px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
           <p className="font-semibold tracking-widest text-on-surface uppercase text-center sm:text-left">
             FARNAV VIỆT NAM - GNSS 4.0 DẪN ĐƯỜNG TƯƠNG LAI
           </p>
@@ -100,7 +100,7 @@ export default function Header() {
       </div>
 
       {/* Main Nav Bar */}
-      <div className="px-6 py-4 max-w-7xl mx-auto flex justify-between items-center relative">
+      <div className="px-6 py-4 max-w-[1680px] mx-auto flex justify-between items-center relative">
         {/* Brand Logo */}
         <div 
           onClick={() => scrollToSection('trang-chu')}

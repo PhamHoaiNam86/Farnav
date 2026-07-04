@@ -1,4 +1,4 @@
-import { Mail, ShoppingBag, Facebook, Youtube, Download, ArrowUp, Globe, Video } from 'lucide-react';
+import { Mail, ShoppingBag, Facebook, Youtube, Download, ArrowUp, Video } from 'lucide-react';
 
 export default function Footer() {
   const scrollSection = (id: string) => {
@@ -31,7 +31,7 @@ export default function Footer() {
         </button>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div className="max-w-[1680px] mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Brand info */}
         <div className="space-y-4 text-left">
           <div
@@ -174,7 +174,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright footer */}
-      <div className="max-w-7xl mx-auto px-6 py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-400 gap-4">
+      <div className="max-w-[1680px] mx-auto px-6 py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-400 gap-4">
         <p>© 2026 FARNAV Vietnam. All rights reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-primary-fixed transition-colors">Chính sách bảo mật</a>

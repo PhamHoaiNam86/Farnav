@@ -9,14 +9,14 @@ export default function NewsSection() {
 
   return (
     <section id="tin-tuc" className="py-20 bg-surface">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1680px] mx-auto px-6">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
           <div>
             <span className="font-display text-xs tracking-[0.2em] font-extrabold text-primary uppercase">
               INSIGHTS & UPDATES
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-on-surface mt-2 tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-black text-shimmer mt-2 tracking-tight">
               TIN TỨC MỚI NHẤT
             </h2>
           </div>

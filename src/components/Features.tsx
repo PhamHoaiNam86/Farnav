@@ -43,7 +43,7 @@ export default function Features() {
 
   return (
     <section className="py-16 bg-primary/[0.03] border-y border-primary/5">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1680px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuresList.map((item, index) => {
             const IconComponent = item.icon;
@@ -54,16 +54,16 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow group cursor-default"
+                className="flex items-center justify-center gap-5 p-6 rounded-2xl bg-primary border border-primary/20 shadow-sm hover:bg-white hover:border-gray-250 hover:scale-105 hover:shadow-xl transition-all duration-300 group cursor-pointer"
               >
-                <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${item.color} group-hover:scale-110`}>
-                  <IconComponent className="w-6 h-6 stroke-[2]" />
+                <div className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 bg-white/15 text-white group-hover:bg-primary/10 group-hover:text-primary group-hover:scale-110">
+                  <IconComponent className="w-7 h-7 stroke-[2]" />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-display text-base font-bold text-on-surface group-hover:text-primary transition-colors">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-on-surface-variant mt-1">
+                  <p className="text-sm sm:text-base text-white/80 group-hover:text-on-surface-variant transition-colors duration-300 mt-1 leading-normal">
                     {item.desc}
                   </p>
                 </div>

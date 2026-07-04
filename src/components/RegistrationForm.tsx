@@ -75,18 +75,18 @@ export default function RegistrationForm() {
 
   return (
     <section id="dang-ky" className="py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-6 text-center">
+      <div className="max-w-[1680px] mx-auto px-6 text-center">
         <span className="font-display text-xs tracking-[0.2em] font-extrabold text-primary uppercase block mb-4">
           FREE TRIAL
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl font-black text-on-surface mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl font-black text-shimmer mb-4">
           ĐĂNG KÝ TEST MÁY MIỄN PHÍ
         </h2>
         <p className="text-sm sm:text-base text-on-surface-variant mb-12 max-w-xl mx-auto leading-relaxed">
           Trải nghiệm thực tế công nghệ định vị centimeter-level trước khi quyết định đầu tư. Chuyên viên kỹ thuật FARNAV sẽ liên hệ hỗ trợ bàn giao tận nơi.
         </p>
 
-        <div className="relative">
+        <div className="relative max-w-3xl mx-auto">
           {/* Decorative side blurs */}
           <div className="absolute -top-12 -left-12 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
           <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, Pause, RotateCcw, Volume2, X, SkipForward, Info, PhoneCall, HelpCircle } from 'lucide-react';
+import { Play, Pause, RotateCcw, Volume2, X, SkipForward, Info, PhoneCall } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';

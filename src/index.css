@@ -54,3 +54,78 @@
 .pulse-glow {
   animation: soft-pulse 4s infinite ease-in-out;
 }
+
+/* Animated gradient text style */
+@keyframes text-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    to right,
+    #005f6e 0%,
+    #007a8c 20%,
+    #7ad3e7 40%,
+    #a5eeff 60%,
+    #7ad3e7 80%,
+    #005f6e 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-gradient-flow 4s linear infinite;
+}
+
+@keyframes border-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.running-border-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.running-border-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #005f6e,
+    transparent 180deg,
+    #005f6e
+  );
+  animation: border-rotate 4s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.running-border-card::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: 13px;
+  z-index: -1;
+  pointer-events: none;
+}
+
