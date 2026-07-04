@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, ArrowUpRight, X, Clock, User, Calendar, BookOpen } from 'lucide-react';
+import { ArrowRight, X, Clock, User, Calendar, BookOpen } from 'lucide-react';
 import { NEWS } from '../data';
 import { News } from '../types';
 
 export default function NewsSection() {
   const [activeArticle, setActiveArticle] = useState<News | null>(null);
+
+  const featuredArticle = NEWS[0];
+  const rightArticles = NEWS.slice(1, 3);
+  const mostViewedArticles = NEWS.slice(3, 7);
 
   return (
     <section id="tin-tuc" className="py-20 bg-surface">
@@ -22,8 +26,7 @@ export default function NewsSection() {
           </div>
           <button
             onClick={() => {
-              // Direct view first news
-              setActiveArticle(NEWS[0]);
+              setActiveArticle(featuredArticle);
             }}
             className="flex items-center gap-2 text-primary font-display text-xs tracking-wider font-extrabold hover:translate-x-1 transition-transform cursor-pointer"
           >
@@ -32,58 +35,110 @@ export default function NewsSection() {
           </button>
         </div>
 
-        {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {NEWS.map((article, index) => (
-            <motion.div
-              key={article.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group running-border-card flex flex-col gap-6 p-6 rounded-[15px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left"
-            >
-              {/* News Thumbnail */}
-              <div className="w-full aspect-[16/10] overflow-hidden rounded-xl bg-gray-100 relative">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-gray-100 text-[11px] font-bold text-on-surface flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-primary" />
-                  <span>{article.date}</span>
+        {/* 3-Column Layout: Left (flexible), Middle (700px), Right (320px) with 40px gap */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_700px_320px] gap-8 lg:gap-[40px] items-start">
+          
+          {/* Left Column: Xem nhiều nhất */}
+          <div className="space-y-6 text-left">
+            <h3 className="font-display text-lg font-black text-on-surface flex items-center gap-2 uppercase tracking-wide">
+              Xem nhiều lần
+            </h3>
+            <div className="space-y-5">
+              {mostViewedArticles.map((article) => (
+                <div
+                  key={article.id}
+                  onClick={() => setActiveArticle(article)}
+                  className="flex gap-4 group cursor-pointer"
+                >
+                  <div className="w-[140px] h-[130px] rounded-xl overflow-hidden flex-shrink-0 bg-gray-50 border border-gray-100 relative transition-transform duration-500 ease-out group-hover:scale-105">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0 flex flex-col justify-center py-1">
+                    <h4 className="font-display text-lg sm:text-xl font-bold text-on-surface line-clamp-4 group-hover:text-primary transition-colors leading-snug">
+                      {article.title}
+                    </h4>
+                    <span className="text-[10px] text-on-surface-variant flex items-center gap-1 font-semibold mt-2">
+                      <Calendar className="w-3.5 h-3.5 text-primary" />
+                      {article.date}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
 
-              {/* News Text */}
-              <div className="flex-1 flex flex-col justify-between">
+          {/* Middle Column: Tin mới - Main featured */}
+          <div className="space-y-6 text-left">
+            <h3 className="font-display text-lg font-black text-on-surface uppercase tracking-wide">
+              Tin mới
+            </h3>
+            {featuredArticle && (
+              <div
+                onClick={() => setActiveArticle(featuredArticle)}
+                className="group cursor-pointer flex flex-col gap-[25px] text-left mx-auto max-w-[700px] w-full"
+              >
+                <div className="w-full aspect-[14/13] overflow-hidden rounded-xl bg-gray-100 relative transition-transform duration-500 ease-out group-hover:scale-[1.03]">
+                  <img
+                    src={featuredArticle.image}
+                    alt={featuredArticle.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-gray-100 text-[11px] font-bold text-on-surface flex items-center gap-1">
+                    <Calendar className="w-3.5 h-3.5 text-primary" />
+                    <span>{featuredArticle.date}</span>
+                  </div>
+                </div>
                 <div>
-                  <h3 className="font-display text-lg sm:text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors cursor-pointer line-clamp-2">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-on-surface-variant line-clamp-3 leading-relaxed mb-6">
-                    {article.summary}
+                  <h4 className="font-display text-lg sm:text-xl font-bold text-on-surface group-hover:text-primary transition-colors leading-tight mb-3">
+                    {featuredArticle.title}
+                  </h4>
+                  <p className="text-sm text-on-surface-variant line-clamp-3 leading-relaxed mb-1">
+                    {featuredArticle.summary}
                   </p>
                 </div>
+              </div>
+            )}
+          </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <span className="text-xs text-on-surface-variant flex items-center gap-1 font-medium">
+          {/* Right Column: Other articles stacked */}
+          <div className="space-y-6 text-left">
+            <h3 className="font-display text-lg font-black text-transparent select-none uppercase tracking-wide hidden lg:block">
+              Spacer
+            </h3>
+            {rightArticles.map((article) => (
+              <div
+                key={article.id}
+                onClick={() => setActiveArticle(article)}
+                className="group cursor-pointer flex flex-col gap-2 w-full"
+              >
+                <div className="w-full aspect-[16/15] overflow-hidden rounded-xl bg-gray-50 border border-gray-100 relative transition-transform duration-500 ease-out group-hover:scale-105">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-gray-100 text-[10px] font-bold text-on-surface flex items-center gap-1">
+                    <Calendar className="w-3 h-3 text-primary" />
+                    <span>{article.date}</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-display text-lg sm:text-xl font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                    {article.title}
+                  </h4>
+                  {/* <span className="text-[10px] text-on-surface-variant flex items-center gap-1 font-semibold mt-1.5">
                     <Clock className="w-3.5 h-3.5 text-gray-400" />
                     {article.readTime}
-                  </span>
-
-                  <button
-                    onClick={() => setActiveArticle(article)}
-                    className="text-primary font-display text-xs tracking-wider font-bold flex items-center gap-1 transition-all duration-300 border border-primary/20 px-4 py-2 rounded-lg hover:bg-primary hover:text-white hover:border-primary cursor-pointer"
-                  >
-                    ĐỌC THÊM
-                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </button>
+                  </span> */}
                 </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
+
         </div>
       </div>
 

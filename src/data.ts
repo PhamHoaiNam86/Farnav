@@ -179,6 +179,72 @@ export const NEWS: News[] = [
       'Bên cạnh đó, việc kết hợp GNSS RTK với thiết bị bay không người lái (UAV) RTK và công nghệ quét laser 3D LiDAR tạo nên một giải pháp khảo sát số hóa toàn diện. Bản đồ số 3D của công trường được xây dựng chính xác đến từng centimet, giúp ban quản lý dự án có cái nhìn trực quan, giám sát chặt chẽ khối lượng đào đắp và kiểm soát chất lượng thi công theo thời gian thực.'
     ],
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAz8tryIncyIE45ByEXOyoKsQuRxTr9RSElT8A1qxFCTO7nzXE6HBsPVjYHYX3tS0qB5OvHN4bKPc850UXOp_gGpV6WKeMQz-b5o2KnGK_LpEeYvVAdH9brRdDN5NUoIGutF0OICUMtCkOl7tCLW48oMShDXBQv7wkSZxKC9YfeeoBi6ouoaJkJ-3CSG_I4MpG3lo8lYFydxyW7fCxOf1j_fwXBg8NjsRmY3bk4n_Vn8YFT31ZdtlcRb8soZWsz9lZUs3m_TiHj7gNi'
+  },
+  {
+    id: 'farnav_training_survey',
+    title: 'Tập huấn chuyển giao công nghệ đo đạc tại Cần Thơ',
+    date: '15/05/2024',
+    summary: 'Chương trình tập huấn thực tế chuyển giao công nghệ đo đạc GNSS RTK thế hệ mới thu hút đông đảo kỹ sư trắc địa khu vực Đồng bằng sông Cửu Long.',
+    author: 'KS. Lê Minh Hoàng - Phòng Kỹ thuật',
+    readTime: '3 phút đọc',
+    content: [
+      'Nhằm nâng cao năng lực ứng dụng công nghệ trắc địa mới cho đội ngũ kỹ sư miền Tây, FARNAV Việt Nam phối hợp cùng Hội Trắc địa Bản đồ Cần Thơ đã tổ chức thành công khoá đào tạo tập huấn thực tế.',
+      'Tại buổi tập huấn, hơn 50 học viên đã được trực tiếp thao tác trên các thiết bị GNSS Rover mới nhất của FARNAV, làm quen với phần mềm Field Survey và học cách thiết lập trạm Base ảo nhanh chóng.',
+      'Đây là hoạt động nằm trong chuỗi sự kiện hỗ trợ kỹ thuật định kỳ của FARNAV trên toàn quốc.'
+    ],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYB3T9-xnfEv1hrUp0e1EIf8W9z3SS2YbYdL5kEMsOvZ8MnELLh4vvGVT7cjt_CLV-AKWxAMm80z2hJH5uQ11rX9uAFBg0aIAqAo_elfEY014J0aREskAPrIXPi2VXWJzqH1RIdksBlMVNKu5Y5u1j76_0qj9xPEZJSntF6rhAHNhSgeJE0ZtfcgNpqAJhz21Qer7e3nNLfFA22xpxtxtDu59gPw_ja_aIRKeOUG-xLjYMIS9I5h3DHYfrrrX7eOC2pV_tQHk6liDq'
+  },
+  {
+    id: 'gnss_rtk_imu_tech',
+    title: 'Công nghệ bù nghiêng IMU 60 độ trên máy GNSS RTK là gì?',
+    date: '10/05/2024',
+    summary: 'Giải thích nguyên lý hoạt động của cảm biến IMU trong máy thu GNSS và lý do công nghệ này giúp tăng gấp đôi năng suất đo đạc ngoài thực địa.',
+    author: 'TS. Nguyễn Minh Triết - Đại học Mỏ Địa chất',
+    readTime: '4 phút đọc',
+    content: [
+      'Công nghệ bù nghiêng IMU (Inertial Measurement Unit) là cuộc cách mạng lớn thứ hai trong ngành đo đạc vệ tinh, chỉ sau sự ra đời của RTK.',
+      'Cảm biến IMU tích hợp bên trong máy thu GNSS giúp đo lường gia tốc và tốc độ góc, từ đó tính toán chính xác góc nghiêng của sào đo so với phương dây dọi mà không bị ảnh hưởng bởi từ trường của kim loại.',
+      'Kỹ sư chỉ cần đặt đầu mũi sào vào điểm cần đo, máy sẽ tự động tính ra tọa độ đáy sào mà không cần phải cân bọt nước tròn như trước.'
+    ],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxrU9-eCj0mSGzk8iVALymwSai6oTVVu0yW3pYVBsTnDyyZ_wWbnPod1XYYibb-qrd00RQ7yiovK-27_b0flSfggPXn5-y2AUHTBKloMI1B8QVe-4FQ6BR-YrejGjZ1g4YoMHgkArh1XowcMU5qu0nAXczBdTuR--xa0dNLBXsX_oYgTO0n8IxRdWuEzBdWdRAeYn88e_1FlkZQmmWEX84BdZMBCqOD4ztfgssvVi9_oIUeJG_n1jmiHgYfK96u_C8818tPAmtscim'
+  },
+  {
+    id: 'cors_network_coverage',
+    title: 'Mở rộng hệ thống trạm CORS tư nhân toàn quốc',
+    date: '05/05/2024',
+    summary: 'FARNAV Việt Nam hoàn tất phủ sóng thêm 20 trạm CORS tư nhân đa hệ vệ tinh tại khu vực Tây Nguyên và Trung Bộ, nâng cao chất lượng đo đạc.',
+    author: 'Nguyễn Văn Nam - Trưởng ban Truyền thông',
+    readTime: '3 phút đọc',
+    content: [
+      'Để cung cấp dịch vụ định vị RTK liên tục và có độ tin cậy cao, hệ thống hạ tầng trạm phát CORS tư nhân của FARNAV đã liên tục được mở rộng rộng khắp cả nước.',
+      'Với việc bổ sung thêm các trạm CORS tại Lâm Đồng, Gia Lai, Đắk Lắk, các kỹ sư đo đạc tại đây sẽ nhận được tín hiệu cải chính RTK nhanh hơn và độ ổn định Fix cao hơn rất nhiều.'
+    ],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrJFICVcR-64fp1lVjowNy5xii2cXV-NGfA_ql18IfYxHHX9b9B9G3Y-Cex7BxK6o35_L8pxwQoFrUQWi6WRyHLinMAiT6PDZAPPqe_d99UVZhDSBYay-rd5jEbVmyktELDrGJwcJtAnpWUNU90h07IzgExS0oUoHBLTLCY6haiEDUATpoBX03jyJlN6FF2hh2u9grySyW3phPlvVLOPtHMNAf47PC0Q4oU9UNrP0y_gpL41qt5-l-AXp9NiDBkfaN_7rhzdMH2aOL'
+  },
+  {
+    id: 'farnav_vietnam_office',
+    title: 'Khai trương văn phòng đại diện mới của FARNAV tại Hà Nội',
+    date: '02/05/2024',
+    summary: 'Sự kiện đánh dấu bước tiến quan trọng của thương hiệu FARNAV tại thị trường Việt Nam nhằm phục vụ chu đáo hơn khách hàng phía Bắc.',
+    author: 'Nguyễn Văn Nam - Trưởng ban Truyền thông',
+    readTime: '2 phút đọc',
+    content: [
+      'Ngày 02/05/2024, văn phòng đại diện mới của FARNAV Việt Nam tại Hà Nội đã chính thức khai trương với phòng bảo hành, kiểm định thiết bị đạt chuẩn quốc tế.',
+      'Khách hàng mua máy tại khu vực phía Bắc từ nay sẽ được hỗ trợ kiểm định, hiệu chuẩn thiết bị lấy ngay trong ngày vô cùng tiện lợi.'
+    ],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDoC7eg6TGHYcS4Opml4khO-Y1qeQRKAB45CMOltd2sQCZHdCvuA9w29OMnpW8trEM3HSfMTJI3fphXfTt7W9-SrqI6svWS7bt_QUNEkabQK9XHOax15s6NSbBaiHObmFBcbtrVZ7gufX8QbVKSZxpdhmfv_XJymQwfFfDOTiRNsjnNrWUjXOv21bJmnicpvRJsQJMZOhgLfWsF0MUNJP_dE4PCY7gVOyfWsVjEtT6n6uRWhsgCynxJQoj0GPVbQZ0V6cBDhKpkwP2M'
+  },
+  {
+    id: 'nbase_upgrade_2024',
+    title: 'Nâng cấp hệ thống trạm Base GNSS cố định FARNAV NBase',
+    date: '28/04/2024',
+    summary: 'Phiên bản cập nhật phần mềm trạm Base NBase giúp cải thiện khả năng truyền dữ liệu mạng 4G liên tục lên đến 72 giờ không ngắt quãng.',
+    author: 'KS. Lê Minh Hoàng - Phòng Kỹ thuật',
+    readTime: '3 phút đọc',
+    content: [
+      'FARNAV công bố bản cập nhật Firmware mới dành riêng cho trạm Base cố định NBase, sửa lỗi mất kết nối mạng di động ở một số vùng sóng yếu và tối ưu hóa điện năng tiêu thụ.'
+    ],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrJFICVcR-64fp1lVjowNy5xii2cXV-NGfA_ql18IfYxHHX9b9B9G3Y-Cex7BxK6o35_L8pxwQoFrUQWi6WRyHLinMAiT6PDZAPPqe_d99UVZhDSBYay-rd5jEbVmyktELDrGJwcJtAnpWUNU90h07IzgExS0oUoHBLTLCY6haiEDUATpoBX03jyJlN6FF2hh2u9grySyW3phPlvVLOPtHMNAf47PC0Q4oU9UNrP0y_gpL41qt5-l-AXp9NiDBkfaN_7rhzdMH2aOL'
   }
 ];
 
