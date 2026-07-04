@@ -17,7 +17,6 @@ export default function App() {
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [currentSubtitle, setCurrentSubtitle] = useState('');
-  const [isWidgetOpen, setIsWidgetOpen] = useState(false);
 
   const introVideo = VIDEOS[0]; // Giới thiệu FARNAV N50
   const durationSecs = 165; // 2m 45s
@@ -104,55 +103,42 @@ export default function App() {
       {/* Page Footer */}
       <Footer />
 
-      {/* Floating Widget: Contact / Support (Zalo / Hotline simulation) */}
-      <div className="fixed bottom-6 left-6 z-40">
-        <div className="relative">
-          <button
-            onClick={() => setIsWidgetOpen(!isWidgetOpen)}
-            className="w-14 h-14 rounded-full bg-primary hover:bg-primary-container text-white flex items-center justify-center shadow-2xl transition-transform active:scale-95 animate-pulse cursor-pointer border border-white/10"
-            title="Liên hệ khẩn cấp"
-          >
-            <PhoneCall className="w-5 h-5" />
-          </button>
+      {/* Floating Contact Stack (Always Fixed on Bottom-Right) */}
+      <div className="fixed bottom-24 right-8 z-50 flex flex-col gap-5 items-center">
+        {/* Phone / Hotline Button */}
+        <a
+          href="tel:0988888888"
+          className="relative w-12 h-12 rounded-full bg-[#ef4444] hover:bg-[#dc2626] text-white flex items-center justify-center shadow-2xl transition-transform active:scale-95 animate-float-zoom pulse-ring-red cursor-pointer"
+          title="Gọi Hotline"
+        >
+          <PhoneCall className="w-5 h-5 stroke-[2.5]" />
+        </a>
 
-          <AnimatePresence>
-            {isWidgetOpen && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                className="absolute bottom-16 left-0 bg-white border border-gray-100 rounded-xl p-5 shadow-2xl w-72 text-left space-y-4"
-              >
-                <div>
-                  <h4 className="font-display text-sm font-extrabold text-on-surface">HOTLINE TƯ VẤN 24/7</h4>
-                  <p className="text-xs text-on-surface-variant mt-1">
-                    Hãy liên hệ ngay để nhận báo giá chiết khấu đặc biệt tốt nhất hôm nay.
-                  </p>
-                </div>
-                <div className="space-y-2 text-xs">
-                  <div className="p-2.5 bg-primary/5 rounded-lg border border-primary/10 flex items-center justify-between">
-                    <span className="font-semibold text-on-surface">Phòng kinh doanh:</span>
-                    <a href="tel:0988888888" className="font-black text-primary hover:underline">0988 888 888</a>
-                  </div>
-                  <div className="p-2.5 bg-emerald-50 rounded-lg border border-emerald-100 flex items-center justify-between">
-                    <span className="font-semibold text-emerald-900">Hỗ trợ kỹ thuật:</span>
-                    <a href="tel:19008686" className="font-black text-emerald-700 hover:underline">1900 8686</a>
-                  </div>
-                </div>
-                <button
-                  onClick={() => {
-                    setIsWidgetOpen(false);
-                    const el = document.getElementById('dang-ky');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:bg-primary-container transition-all"
-                >
-                  ĐĂNG KÝ TEST MÁY TẬN NƠI
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+        {/* Messenger Button */}
+        <a
+          href="https://m.me/farnav"
+          target="_blank"
+          rel="noreferrer"
+          className="relative w-12 h-12 rounded-full bg-[#0084ff] hover:bg-[#0072dd] text-white flex items-center justify-center shadow-2xl transition-transform active:scale-95 animate-float-zoom pulse-ring-blue cursor-pointer"
+          style={{ animationDelay: '0.3s' }}
+          title="Chat Messenger"
+        >
+          <svg className="w-5.5 h-5.5 fill-white" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.914 1.47 5.514 3.766 7.185V22l3.418-1.875A12.7 12.7 0 0 0 12 20.516c5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.109 11.758l-2.617-2.793-5.11 2.793 5.617-5.968 2.617 2.793 5.11-2.793-5.617 5.968z" />
+          </svg>
+        </a>
+
+        {/* Zalo Button */}
+        <a
+          href="https://zalo.me/0988888888"
+          target="_blank"
+          rel="noreferrer"
+          className="relative w-12 h-12 rounded-full bg-white hover:bg-gray-50 flex items-center justify-center shadow-2xl transition-transform active:scale-95 animate-float-zoom pulse-ring-zalo cursor-pointer border border-blue-100"
+          style={{ animationDelay: '0.6s' }}
+          title="Chat Zalo"
+        >
+          <span className="font-sans font-black text-sm tracking-tighter text-[#0068ff]">Zalo</span>
+        </a>
       </div>
 
       {/* Global overlay player for Hero Video click */}
